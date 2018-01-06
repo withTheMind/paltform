@@ -37,6 +37,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,6 +46,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -84,11 +86,11 @@
 			</resource>
 			
 			<resource>
-				<directory>src/main/java/com/bbs/member/mapper</directory>
+				<directory>src/main/java/com/paltform/member/mapper</directory>
 				<includes>
 					<include>*.xml</include>
 				</includes>
-				<targetPath>com/bbs/member/mapper</targetPath>
+				<targetPath>com/paltform/member/mapper</targetPath>
 			</resource>
 			
 		</resources>
