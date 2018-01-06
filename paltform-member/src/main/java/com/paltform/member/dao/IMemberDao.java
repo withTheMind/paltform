@@ -1,7 +1,10 @@
 package com.paltform.member.dao;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.platform.entity.Member;
 
+@Mapper
 public interface IMemberDao {
 	
 	/**
@@ -9,6 +12,6 @@ public interface IMemberDao {
 	 * @param m 手机号 密码
 	 * @return
 	 */
-	Member login(String phone, String password);
+	Member login(Member member);
 	
 }

@@ -19,11 +19,11 @@
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-autoconfigure</artifactId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<artifactId>mybatis-spring-boot-autoconfigure</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,7 +37,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -46,7 +45,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
