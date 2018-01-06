@@ -1,0 +1,31 @@
+.register-tip {
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	font-size: 20px;
+}
+
+.btn-register {
+	width: 100%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.row-yzm {
+	display: inline-block;
+	margin-bottom: -5px;
+	width: 59%;
+}
+
+.link-send-yzm {
+	float: right;
+	display: block;
+	text-align: right;
+	padding-right: 15px;
+	line-height: 40px;
+	height: 40px;
+}
+
+a.disabled{
+	color: #a4a4a4;
+}

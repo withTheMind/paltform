@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/common.css" rel="stylesheet" />
+		<link href="/css/login.css" rel="stylesheet" />
+		<title>登录</title>
+
+	</head>
+
+	<body class="mui-android mui-android-6 mui-android-6-0">
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">登录</h1>
+		</header>
+
+		<div class="mui-content container">
+			<form class="mui-input-group margin15">
+				<div class="mui-input-row">
+					<label style="width: 25%;">账号</label>
+					<input style="width: 75%;" name="phone" id="phone" type="text" class="mui-input-clear form-padding-right" placeholder="请输入手机号" />
+				</div>
+				<div class="mui-input-row">
+					<label style="width: 25%;">密码</label>
+					<input style="width: 75%;" type="password" name="password" id="password" class="mui-input-password form-padding-right" placeholder="请输入密码" />
+				</div>
+			</form>
+			<div class="error-msg">
+				<span id="error-tip"></span>
+			</div>
+			<div class="mui-button-row">
+				<button type="button" class="mui-btn mui-btn-primary btn-login">登录</button>
+			</div>
+		</div>
+
+		<script src="/js/mui.min.js"></script>
+		<script src="/js/login.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+
+			//启用轮播
+			mui("#slider").slider({
+				interval: 5000
+			});
+		</script>
+		<script>
+			(function($){
+				//登录按钮
+				$(".btn-login")[0].addEventListener("tap", function(){
+					
+					var tip = $("#error-tip")[0];
+					
+					//手机号
+					var phone = $("#phone")[0].value;
+					if(phone == "" || phone == "null"){
+						tip.innerText = "手机号不能为空";
+						return;
+					}
+					if(!/^1[34578]\d{9}$/.test(phone)){
+						tip.innerText = "手机号格式错误";
+						return;
+					}
+					
+					//密码
+					var password = $("#password")[0].value;
+					if(password == "" || password == "null"){
+						tip.innerText = "密码不能为空";
+						return;
+					}
+					
+					$.ajax("/mem/loginValide", {
+						data:{
+							phone:phone,
+							password:password
+						},
+						dataType:'json',//服务器返回json格式数据
+						type:'post',//HTTP请求类型
+						timeout:10000,//超时时间设置为10秒
+						success:function(result){
+							if(result.status == 500){
+								tip.innerText = result.message;
+							} else if(result.status == 200){
+								window.location = "/mem/login";
+								alert("登录成功");
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							$.toast("系统异常");
+						}
+					});
+				});
+			})(mui);
+		</script>
+	</body>
+
+</html>

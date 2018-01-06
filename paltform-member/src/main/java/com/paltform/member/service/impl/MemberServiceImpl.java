@@ -18,7 +18,6 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired
 	private IMemberDao memberDao;
 	
-	
 	@Override
 	public Member login(Member m) {
 		//密码加密

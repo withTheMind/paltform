@@ -1,0 +1,111 @@
+p {
+	color: black;
+}
+
+.div-agree,
+.div-comment {
+	border: 1px solid #dcdcdc;
+	text-align: center;
+	border-radius: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.div-agree span,
+.div-comment span {
+	font-size: 18px;
+	color: #949494;
+}
+
+.div-agree span.active,
+.div-comment span.active {
+	color: #0079ff;
+}
+
+.comment-tip {
+	margin-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.comment-tip span {
+	border-bottom: 1px solid red;
+}
+
+.author {
+	color: #8f8f94;
+	text-align: center;
+}
+
+.postTime {
+	text-align: right;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #8f8f94;
+}
+
+.comment * {
+	margin: 0px;
+	padding: 0px;
+}
+
+.comment ul {
+	background-color: #FFFFFF;
+}
+
+.comment ul,
+.comment li {
+	list-style: none;
+}
+
+.comment li {
+	padding: 10px 10px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.comment li:last-child {
+	border-bottom: none;
+}
+
+.member-photo img {
+	border-radius: 50%;
+	width: 100%;
+}
+
+.member-photo {
+	padding: 0px 0px;
+}
+
+.comment-agree span {
+	font-size: 14px;
+	color: #949494;
+}
+
+.comment-agree span.active {
+	color: #0079ff;
+}
+
+.comment-nickName {
+	color: #8f8f94;
+	padding-left: 10px;
+}
+
+.comment-time {
+	font-size: 12px;
+	padding-left: 10px;
+}
+
+.comment-content{
+	padding-left: 10px;
+}
+
+.right-align{
+	text-align: right;
+}
+.comment-2 .comment-nickName{
+	padding-left: 30px;
+}
+
+.comment-content-2{
+	color: #000;
+}

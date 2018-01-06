@@ -1,0 +1,14 @@
+.error-msg{
+	color: red;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	padding-left:16px;
+	margin-top: 5px;
+}
+
+.btn-login{
+	width: 100%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
