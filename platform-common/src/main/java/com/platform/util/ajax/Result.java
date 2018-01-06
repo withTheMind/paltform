@@ -21,5 +21,18 @@ public class Result {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	public Result() {
+		super();
+	}
+	public Result(String message) {
+		super();
+		this.message = message;
+	}
+	public Result(int status, String message) {
+		super();
+		this.status = status;
+		this.message = message;
+	}
+	
 	
 }
