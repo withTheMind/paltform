@@ -3,6 +3,11 @@ package com.platform.util.md5;
 
 public class MessageUtil {
 	
+	
+	public static void main(String[] args) {
+		System.out.println(encodeMD5("123456"));
+	}
+	
 	/**
 	 * 
 	 * 方法说明：使用MD5加密字符串
