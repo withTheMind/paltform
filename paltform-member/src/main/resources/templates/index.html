@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<title>首页</title>
+
+	</head>
+
+	<body class="mui-android mui-android-6 mui-android-6-0">
+
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" id="home">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<!--<a class="mui-tab-item">
+				<span class="mui-icon mui-icon-location-filled"></span>
+				<span class="mui-tab-label">附近</span>
+			</a>-->
+			<a class="mui-tab-item" id="message">
+				<span class="mui-icon mui-icon-email">
+					<span class="mui-badge">9</span>
+				</span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item" id="center">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/nav.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				subpages: [{
+					url: "main.html",
+					id: "index",
+					styles: {
+						top: "0px",
+						bottom: "45px"
+					}
+				}]
+			});
+		</script>
+	</body>
+
+</html>

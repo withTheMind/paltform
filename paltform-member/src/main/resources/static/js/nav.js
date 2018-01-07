@@ -5,7 +5,7 @@
 
 	home.addEventListener("tap", function() {
 		$.openWindow({
-			url: "index.html",
+			url: "/main",
 			show: {
 				autoShow: true, //页面loaded事件发生后自动显示，默认为true
 			},
