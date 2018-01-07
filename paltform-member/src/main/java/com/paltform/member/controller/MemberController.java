@@ -16,7 +16,7 @@ public class MemberController {
 	 */
 	@RequestMapping("/centerPage")
 	public String centerPage(){
-		return "";
+		return "member/center-main";
 	}
 	
 }

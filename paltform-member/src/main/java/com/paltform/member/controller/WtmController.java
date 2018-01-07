@@ -26,4 +26,22 @@ public class WtmController {
 		return "main";
 	}
 	
+	/**
+	 * 个人中心
+	 * @return
+	 */
+	@RequestMapping("/center")
+	public String center(){
+		return "center";
+	}
+	
+	/**
+	 * 未登录
+	 * @return
+	 */
+	@RequestMapping("/notLogin")
+	public String notLogin(){
+		return "center-not-login-main";
+	}
+	
 }

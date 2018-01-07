@@ -5,7 +5,7 @@
 
 	home.addEventListener("tap", function() {
 		$.openWindow({
-			url: "/main",
+			url: "/",
 			show: {
 				autoShow: true, //页面loaded事件发生后自动显示，默认为true
 			},
@@ -31,7 +31,7 @@
 
 	center.addEventListener("tap", function() {
 		$.openWindow({
-			url: "center-not-login.html",
+			url: "/center",
 			show: {
 				autoShow: true, //页面loaded事件发生后自动显示，默认为true
 			},

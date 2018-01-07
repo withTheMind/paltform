@@ -8,6 +8,10 @@
 		select * from Member where phone = #{phone} and password = #{password}
 	</select>
 	
+	<!-- <select id="login" parameterType="Member" resultMap="memberMapper">
+		select * from Member where phone = #{phone} and password = #{password}
+	</select> -->
+	
 	<resultMap id="memberMapper" type="Member">
         <id column="memberId" property="memberId"/>
         <result column="phone" property="phone"/>
