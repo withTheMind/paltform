@@ -1,23 +1,15 @@
 package com.paltform.test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.paltform.member.Application;
-import com.paltform.member.dao.IMemberDao;
 import com.platform.entity.Member;
+import com.platform.util.httpclient.HttpClientHelper;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Application.class)
-@WebAppConfiguration
 public class MemberTest {
 	
-	@Autowired
-	private IMemberDao memberDao;
 	
 	@Test
 	public void test(){
@@ -25,16 +17,14 @@ public class MemberTest {
 		Member m = new Member();
 		m.setPhone("15082037343");
 		m.setPassword("123456");
+		Map<String, String> map = new HashMap<String, String>();
 		
+		map.put("phone", "15082037343");
+		map.put("password", "123456");
 		
-		try {
-			Member member = memberDao.login(m);
-			
-			System.out.println(member);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		String content = HttpClientHelper.post("http://localhost:8888/mem/loginValide", map);
 		
+		System.out.println(content);
 	}
 	
 }
