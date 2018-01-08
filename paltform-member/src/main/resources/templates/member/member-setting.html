@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/common.css" rel="stylesheet" />
+		<title>我</title>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我</h1>
+		</header>
+
+		<div class="mui-content">
+			<div class="title">
+				头像
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right mui-row change-head" id="img-head">
+						<label class="mui-col-xs-3">更换头像</label>
+						<span class="mui-col-xs-9">
+							<img src="/images/60x60.gif" />
+							<input type="file" id="upload" name="upload" onchange="uploadFile(this);" style="display:none;"/>
+						</span>
+					</a>
+				</li>
+			</ul>
+			
+			<div class="title">
+				个人资料
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="list-value mui-row">
+						<label class="mui-col-xs-3">手机号</label>
+						<span class="mui-col-xs-9">15082037343</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right mui-row list-value" id="nickName-link">
+						<label class="mui-col-xs-3">昵称</label>
+						<span class="mui-col-xs-9" id="nickName" th:text="${session.member.nickName	·}"></span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right mui-row list-value">
+						<label class="mui-col-xs-3">邮箱</label>
+						<span class="mui-col-xs-9">15082037343@163.com</span>
+					</a>
+				</li>
+			</ul>
+
+			<div class="title">
+				账户安全
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a class="mui-navigate-right">
+						修改密码
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<script src="/js/mui.min.js"></script>
+		<script src="/js/jquery-1.11.0.js"></script>
+		<script src="/js/ajaxfileupload.js"></script>
+		<script src="/member/js/member-setting.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+
+	</body>
+
+</html>

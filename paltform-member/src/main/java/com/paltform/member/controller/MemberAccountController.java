@@ -93,7 +93,7 @@ public class MemberAccountController {
 	 */
 	@RequestMapping("/login")
 	public String login(Member member){
-		return "redirect:/mem/loginPage";
+		return "redirect:/member/centerPage";
 	}
 	
 	/**

@@ -19,6 +19,16 @@ public class MemberServiceImpl implements MemberService{
 	private IMemberDao memberDao;
 	
 	@Override
+	public void updateNickName(Member member) {
+		try {
+			memberDao.updateNickName(member);
+		} catch (Exception e) {
+			logger.error("昵称修改失败:" + member.getNickName(), e);
+		}
+		
+	}
+	
+	@Override
 	public Member login(Member m) {
 		//密码加密
 		m.setPassword(MessageUtil.encodeMD5(m.getPassword()));
