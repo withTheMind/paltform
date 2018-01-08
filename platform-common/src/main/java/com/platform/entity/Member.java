@@ -13,6 +13,8 @@ public class Member implements Serializable{
 	private int memberId;
 	private String phone;//手机号 登录账号
 	private String password;//密码
+	private String nickName;//昵称
+	private String email;//邮箱
 	
 	public int getMemberId() {
 		return memberId;
@@ -32,5 +34,18 @@ public class Member implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getNickName() {
+		return nickName;
+	}
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	
 }
