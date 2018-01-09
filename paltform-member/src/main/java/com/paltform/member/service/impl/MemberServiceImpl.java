@@ -19,6 +19,24 @@ public class MemberServiceImpl implements MemberService{
 	private IMemberDao memberDao;
 	
 	@Override
+	public void register(Member member) {
+		
+		//加密
+		member.setPassword(MessageUtil.encodeMD5(member.getPassword()));
+		try {
+			memberDao.register(member);
+		} catch (Exception e) {
+			logger.error("注册失败:" + e.getMessage(), e);
+		}
+		
+	}
+	
+	@Override
+	public boolean queryByPhone(String phone) {
+		return memberDao.queryByPhone(phone) == null ? false : true;
+	}
+	
+	@Override
 	public void updateEmail(Member member) {
 		try {
 			memberDao.updateEmail(member);

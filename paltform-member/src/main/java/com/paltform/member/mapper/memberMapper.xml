@@ -3,6 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.paltform.member.dao.IMemberDao">
+
+	<!-- 注册 -->
+	<insert id="register" parameterType="Member">
+		insert into Member(phone, password, registerTime) values(#{phone}, #{password}, #{registerTime})
+	</insert>
+	
+	<!-- 根据手机号查询 -->
+	<select id="queryByPhone" resultMap="memberMapper">
+		select * from Member where phone = #{arg0}
+	</select>
 	
 	<!-- 修改邮箱 -->
 	<update id="updateEmail" parameterType="Member">
@@ -23,6 +33,7 @@
         <id column="memberId" property="memberId"/>
         <result column="phone" property="phone"/>
         <result column="password" property="password"/>
+        <result column="registerTime" property="registerTime"/>
         <result column="nickName" property="nickName"/>
         <result column="email" property="email"/>
     </resultMap>

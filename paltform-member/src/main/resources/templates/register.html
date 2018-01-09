@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/common.css" rel="stylesheet" />
+		<link href="/css/register.css" rel="stylesheet" />
+		<title>注册</title>
+
+	</head>
+
+	<body class="mui-android mui-android-6 mui-android-6-0">
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+
+		<div class="mui-content container">
+			<div class="register-tip">
+				<span>输入手机号，快速注册</span>
+			</div>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<input type="text" name="phone" id="phone" class="mui-input-clear form-padding-right" placeholder="请输入手机号" />
+				</div>
+				
+				<div class="mui-input-row row-yzm">
+					<input type="text" name="yzm" id="yzm" class="mui-input-clear form-padding-right" placeholder="请输入验证码"/>
+				</div>
+				<a class="link-send-yzm" id="send-yzm" data-mark="0">获取验证码</a>
+			</form>
+			<div class="error-msg">
+				<span id="error-value"></span>
+			</div>
+			<div class="mui-button-row">
+				<button type="button" class="mui-btn mui-btn-primary btn-register">注册</button>
+			</div>
+		</div>
+
+		<script src="/js/mui.min.js"></script>
+		<script src="/js/jquery-1.11.0.js"></script>
+		<script src="/js/register.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init();
+		</script>
+		
+	</body>
+
+</html>

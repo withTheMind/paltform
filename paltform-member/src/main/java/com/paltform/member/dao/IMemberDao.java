@@ -8,6 +8,19 @@ import com.platform.entity.Member;
 public interface IMemberDao {
 	
 	/**
+	 * 注册
+	 * @param member 账号 密码 注册时间
+	 */
+	void register(Member member);
+	
+	/**
+	 * 根据手机号查询
+	 * @param phone 手机号
+	 * @return
+	 */
+	Member queryByPhone(String phone);
+	
+	/**
 	 * 修改邮箱
 	 * @param member id 邮箱
 	 */

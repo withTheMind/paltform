@@ -4,6 +4,18 @@ import com.platform.entity.Member;
 
 public interface MemberService {
 	
+	/**
+	 * 注册
+	 * @param member 账号 密码 注册时间
+	 */
+	void register(Member member);
+	
+	/**
+	 * 判断手机号是否注册
+	 * @param phone 手机号
+	 * @return true:已注册,false:未注册
+	 */
+	boolean queryByPhone(String phone);
 	
 	/**
 	 * 修改邮箱
