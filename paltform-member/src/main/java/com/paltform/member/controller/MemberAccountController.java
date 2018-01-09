@@ -19,6 +19,7 @@ import com.platform.entity.Member;
 import com.platform.util.RandomUtil;
 import com.platform.util.ajax.Result;
 import com.platform.util.regex.RegexUtil;
+import com.platform.util.shortMessage.ShortMessageUtil;
 
 /**
  * 账户相关
@@ -211,7 +212,8 @@ public class MemberAccountController {
 		String yzm = RandomUtil.random();
 
 		String content = "你的验证码为:" + yzm + ",验证码有效时间30min,请妥善保管。";
-
+		logger.info(content);
+		
 		YzmEntity yzmEntity = new YzmEntity();
 		yzmEntity.setPhone(phone);// 手机号
 		yzmEntity.setYzm(yzm);// 验证码
@@ -220,9 +222,8 @@ public class MemberAccountController {
 		// 存入session
 		request.getSession().setAttribute("yzm-info", yzmEntity);
 
-		System.out.println(content);
-		// TODO 发送验证码
-		// ShortMessageUtil.sendMessage(smsMob, smsText)
+		// 发送验证码
+		ShortMessageUtil.sendMessage(phone, content);
 
 		result.setStatus(200);// 成功
 		result.setMessage("验证码发送成功");// 请注意查收
