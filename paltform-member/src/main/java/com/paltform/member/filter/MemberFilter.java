@@ -20,7 +20,7 @@ import com.alibaba.fastjson.JSON;
 import com.platform.entity.Member;
 import com.platform.util.ajax.Result;
 
-@WebFilter(filterName = "memberFilter", urlPatterns = {"/member/*"})
+@WebFilter(filterName = "memberFilter", urlPatterns = {"/member/*", "/note/*"})
 public class MemberFilter implements Filter{
 	
 	private static Logger logger = LoggerFactory.getLogger(MemberFilter.class);

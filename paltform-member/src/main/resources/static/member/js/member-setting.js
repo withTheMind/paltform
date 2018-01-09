@@ -18,14 +18,65 @@
 			}
 		});
 		
-		
 	});
+	
+	//更换邮箱
+	doc.getElementById("email-link").addEventListener("tap", function(){
+		$.ajax("/member/getMember", {
+			dataType: 'json', //服务器返回json格式数据
+			type: 'post', //HTTP请求类型
+			timeout: 10000, //超时时间设置为10秒
+			success: function(data) {
+				$.prompt("请注意邮箱格式", "请输入邮箱", "修改邮箱", ["确认", "取消"], function(e) {
+					if(e.index == 0) {
+						changeEmail(e.value);
+					}
+				});
+				document.querySelector('.mui-popup-input input').value = data.email;
+			},
+			error: function(xhr, type, errorThrown) {
+				$.toast("系统异常");
+			}
+		});
+	});
+	
 
 	doc.getElementById("img-head").addEventListener("tap", function() {
 		
 		jQuery("#upload").click();
 
 	}, false);
+	
+	
+	//修改邮箱
+	function changeEmail(email){
+		
+		if(!/^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/.test(email)){
+			$.toast("邮箱格式不正确");
+			return;
+		}
+		
+		$.ajax("/member/updateEmail", {
+			data:{
+				email: email
+			},
+			dataType: 'json', //服务器返回json格式数据
+			type: 'post', //HTTP请求类型
+			timeout: 10000, //超时时间设置为10秒
+			success: function(data) {
+				if(data.status == 500){
+					$.toast(data.message);
+				}else if(data.status == 200){
+					$("#email")[0].innerText = data.message;
+					$.toast("邮箱修改成功");
+				}
+			},
+			error: function(xhr, type, errorThrown) {
+				$.toast("系统异常");
+			}
+		});
+		
+	}
 
 })(mui, document);
 
@@ -44,7 +95,7 @@ function changeNickName(nickName){
 		timeout: 10000, //超时时间设置为10秒
 		success: function(result) {
 			document.getElementById("nickName").innerText =　result.message;
-			mui.toast("会员昵称修改成功");
+			mui.toast("昵称修改成功");
 		},
 		error: function(xhr, type, errorThrown) {
 			mui.toast("系统异常");

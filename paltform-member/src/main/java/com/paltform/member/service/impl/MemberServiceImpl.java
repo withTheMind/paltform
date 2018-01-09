@@ -19,6 +19,15 @@ public class MemberServiceImpl implements MemberService{
 	private IMemberDao memberDao;
 	
 	@Override
+	public void updateEmail(Member member) {
+		try {
+			memberDao.updateEmail(member);
+		} catch (Exception e) {
+			logger.error("邮箱修改失败:" + member.getEmail(), e);
+		}
+	}
+	
+	@Override
 	public void updateNickName(Member member) {
 		try {
 			memberDao.updateNickName(member);

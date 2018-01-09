@@ -3,7 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.paltform.member.dao.IMemberDao">
-
+	
+	<!-- 修改邮箱 -->
+	<update id="updateEmail" parameterType="Member">
+		update Member set email = #{email} where memberId = #{memberId}
+	</update>
+	
+	<!-- 修改昵称 -->
 	<update id="updateNickName" parameterType="Member">
 		update Member set nickName = #{nickName} where memberId = #{memberId}
 	</update>

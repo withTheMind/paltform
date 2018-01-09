@@ -14,8 +14,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.paltform.member.service.MemberService;
 import com.platform.entity.Member;
+import com.platform.entity.logger.EmailLogger;
 import com.platform.entity.logger.NickNameLogger;
 import com.platform.util.ajax.Result;
+import com.platform.util.regex.RegexUtil;
 
 @Controller
 @Scope("prototype")
@@ -26,6 +28,51 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	
+	/**
+	 * 修改邮箱
+	 * @param email 邮箱
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping("/updateEmail")
+	public Result updateEmail(HttpServletRequest request, String email){
+		Result result = new Result();
+		
+		//邮箱为空
+		if(email == null || "".equals(email)){
+			logger.info("邮箱为空");
+			result.setMessage("邮箱不能为空");
+			return result;
+		}
+		
+		//邮箱格式
+		if(!RegexUtil.email(email)){
+			logger.info("邮箱格式错误" + email);
+			result.setMessage("邮箱格式不正确");
+			return result;
+		}
+		
+		//session会员
+		Member member = (Member)request.getSession().getAttribute("member");
+		
+		EmailLogger emailLogger = new EmailLogger();
+		emailLogger.setPhone(member.getPhone());//账户
+		emailLogger.setOldEmail(member.getEmail());//旧邮箱
+		emailLogger.setNewEmail(email);//新邮箱
+		
+		logger.info("邮箱修改成功:" + emailLogger);
+		
+		//修改session会员邮箱
+		member.setEmail(email);
+		
+		//修改邮箱
+		memberService.updateEmail(member);
+		
+		result.setStatus(200);
+		result.setMessage(email);//新邮箱
+		return result;
+	}
 	
 	/**
 	 * 昵称验证

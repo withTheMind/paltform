@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="/css/mui.min.css" rel="stylesheet" />
+		<link href="/css/common.css" rel="stylesheet" />
+		<title>随记列表</title>
+
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的随记</h1>
+			<a class="mui-btn mui-btn-link mui-pull-right mui-btn-blue" href="write-note.html">随记</a>
+		</header>
+
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-table-view-chevron datalist">
+					<!-- <li class="mui-table-view-cell">
+						<a class="mui-navigate-right list-value">
+							<label class="mui-col-xs-4">2012-12-12</label>
+							<span class="mui-col-xs-8 value">测试内容</span>
+						</a>
+					</li> -->
+				</ul>
+				<input type="hidden" name="pageNo" id="pageNo" value=""/>
+			</div>
+
+		</div>
+
+		<script src="/js/mui.min.js"></script>
+		<script src="/js/jquery-1.11.0.js"></script>
+		<script src="/js/date.js"></script>
+		<script src="/member/js/note-list.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			mui.init({
+				pullRefresh: {
+					container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+					up: {
+						contentrefresh: '正在加载...',
+						auto: true,//可选,默认false.首次加载自动上拉刷新一次
+						callback: pullupRefresh
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

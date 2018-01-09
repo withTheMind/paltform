@@ -14,7 +14,6 @@ public class PageModel<T> {
 	private int total;//总条数
 	private int sumPage;//总页数
 	private List<T> list;//当前页数据
-	private String url;//访问路径
 	public int getCurrentPage() {
 		return currentPage;
 	}
@@ -44,13 +43,6 @@ public class PageModel<T> {
 	public int getSumPage() {
 		return sumPage;
 	}
-	public String getUrl() {
-		return url;
-	}
-	public void setUrl(String url) {
-		this.url = url;
-	}
-	
 	
 	@Override
 	public String toString() {

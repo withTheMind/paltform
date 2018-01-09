@@ -39,19 +39,19 @@
 				<li class="mui-table-view-cell">
 					<a class="list-value mui-row">
 						<label class="mui-col-xs-3">手机号</label>
-						<span class="mui-col-xs-9">15082037343</span>
+						<span class="mui-col-xs-9" th:text="${session.member.phone }">15082037343</span>
 					</a>
 				</li>
 				<li class="mui-table-view-cell">
 					<a class="mui-navigate-right mui-row list-value" id="nickName-link">
 						<label class="mui-col-xs-3">昵称</label>
-						<span class="mui-col-xs-9" id="nickName" th:text="${session.member.nickName	·}"></span>
+						<span class="mui-col-xs-9" id="nickName" th:text="${session.member.nickName }"></span>
 					</a>
 				</li>
 				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right mui-row list-value">
+					<a class="mui-navigate-right mui-row list-value" id="email-link">
 						<label class="mui-col-xs-3">邮箱</label>
-						<span class="mui-col-xs-9">15082037343@163.com</span>
+						<span class="mui-col-xs-9" id="email" th:text="${session.member.email}"></span>
 					</a>
 				</li>
 			</ul>

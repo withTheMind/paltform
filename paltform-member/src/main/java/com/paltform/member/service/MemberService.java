@@ -6,6 +6,12 @@ public interface MemberService {
 	
 	
 	/**
+	 * 修改邮箱
+	 * @param member id 邮箱
+	 */
+	void updateEmail(Member member);
+	
+	/**
 	 * 修改用户昵称
 	 * @param member 用户id 昵称
 	 */
