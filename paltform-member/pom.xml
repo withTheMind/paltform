@@ -59,7 +59,7 @@
 	
 	<build>
 		
-		<finalName>platform-member</finalName>
+		<finalName>paltform-member</finalName>
 		
 		<resources>
 			<resource>
