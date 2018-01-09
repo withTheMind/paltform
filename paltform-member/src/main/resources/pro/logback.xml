@@ -2,7 +2,7 @@
 <configuration>
 
 	<property name="LOG_HOME" value="/usr/local/paltform/logs" />
-	<property name="LOG_FILENAME" value="bbs-member" />
+	<property name="LOG_FILENAME" value="paltform-member" />
 
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
