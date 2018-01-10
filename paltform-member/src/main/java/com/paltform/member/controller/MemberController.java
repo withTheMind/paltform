@@ -110,7 +110,7 @@ public class MemberController {
 	 */
 	@RequestMapping("/updatePwdPage")
 	public String updatePwdPage() {
-		return "/member/update-password";
+		return "member/update-password";
 	}
 
 	/**
