@@ -19,6 +19,31 @@ public class MemberServiceImpl implements MemberService{
 	private IMemberDao memberDao;
 	
 	@Override
+	public void updatePassword(Member member) {
+		try {
+			memberDao.updatePassword(member);
+		} catch (Exception e) {
+			logger.info("密码修改失败:" + e.getMessage(), e);
+		}
+	}
+	
+	@Override
+	public boolean judgePassword(Member member, String pwd) {
+		
+		try {
+			//数据库查询
+			Member mem = memberDao.queryByPhone(member.getPhone());
+			
+			return MessageUtil.encodeMD5(pwd).equals(mem.getPassword()) ? true : false;
+			
+		} catch (NullPointerException e) {
+			logger.error("judgePassword:" + e.getMessage(), e);
+		}
+		
+		return false;
+	}
+	
+	@Override
 	public void register(Member member) {
 		
 		//加密

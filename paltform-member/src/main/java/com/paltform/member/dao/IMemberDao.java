@@ -8,6 +8,12 @@ import com.platform.entity.Member;
 public interface IMemberDao {
 	
 	/**
+	 * 修改会员密码
+	 * @param member 账号 密码
+	 */
+	void updatePassword(Member member);
+	
+	/**
 	 * 注册
 	 * @param member 账号 密码 注册时间
 	 */
